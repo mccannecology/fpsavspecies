@@ -11,7 +11,7 @@ shinyUI(pageWithSidebar(
     h3("User Inputs"),
     selectInput("TOTALN", 
                 "Total N (mg/L):",
-                choices=c(0.1,0.5,1,2,3,4,5,6,7,8,9,10),
+                choices=c(1,2,3,4,5,6,7,8,9),
                 selected=5
     ),
 
@@ -27,7 +27,7 @@ shinyUI(pageWithSidebar(
     ),
     selectInput("scenario", 
                 "Species composition:",
-                choices=list("1 species"=A,"3 species: Equal"=B,"3 species: Tradeoffs"=C,"3 Species: Hierarchy"=D)
+                choices=list("1 species"="A","3 species: Equal"="B","3 species: Tradeoffs"="C","3 Species: Hierarchy"="D")
     ),  
     hr(),
     strong("Simulation number:"),
@@ -90,7 +90,6 @@ shinyUI(pageWithSidebar(
         p("Each cell is 1 square meter."),
         p("Units for biomass are g dw/m2."),
         p("Scale bars are unique for each plot."),
-        p("FPtotal and FP01 are redundant plots."),
         p("The plot 'LAND' shows a value of 0 for water (yellow or white) 
           and a value of 1 (green) for land."),
         strong("Warning:"),
@@ -113,7 +112,6 @@ shinyUI(pageWithSidebar(
         p("Each cell is 1 square meter."),
         p("Units for biomass are g dw/m2."),
         p("Scale bars are unique for each plot."),
-        p("FPtotal and FP01 are redundant plots."),
         p("The plot 'LAND' shows a value of 0 for water (yellow or white) 
           and a value of 1 (green) for land."),
         strong("Warning:"),
@@ -136,7 +134,6 @@ shinyUI(pageWithSidebar(
         p("Each cell is 1 square meter."),
         p("Units for biomass are g dw/m2."),
         p("Scale bars are unique for each plot."),
-        p("FPtotal and FP01 are redundant plots."),
         p("The plot 'LAND' shows a value of 0 for water (yellow or white) 
           and a value of 1 (green) for land."),
         strong("Warning:"),
@@ -155,7 +152,6 @@ shinyUI(pageWithSidebar(
         h3("Percent cover through time"),
         imageOutput("cover",height="75%",width="75%"),
         br(),
-        p("Note: variables labelled 'All_FP' and 'FP_01' are redundant"),
         strong("Warning:"),
         p("This is the result of a single, stochastic simulation.
           Results may differ if this simulation is re-run.
